@@ -14,11 +14,11 @@ public class FunctionExample {
     List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
 
     // Usar a Function com expressão lambda para dobrar todos os números
-    Function<Integer, Integer> dobrar = numero -> numero * 2;
+    Function<Integer, Integer> dobrar = numero -> numero * 2; // é como se fosse um metodo menor que pode ser chamado a qualquer momento
 
     // Usar a função para dobrar todos os números no Stream e armazená-los em outra lista
     List<Integer> numerosDobrados = numeros.stream()
-        .map(n -> n * 2)
+        .map(dobrar)
         .toList();
 
     // Imprimir a lista de números dobrados
