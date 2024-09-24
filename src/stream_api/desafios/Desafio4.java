@@ -20,6 +20,7 @@ public class Desafio4 {
         // Declarar outra lista, criar uma stream que filtra os valores pares e salvar como uma nova lista o resultado
         List<Integer> numerosPares = numeros.stream()
             .filter(removeImpares) // usa a expressão lambda removeImpares para filtar os valores pares
+            .distinct() // remove os valores repetidos
             .collect(Collectors.toList()); // usar a interface Collectors para salvar numa nova lista
 
         numerosPares.forEach(System.out::println);
