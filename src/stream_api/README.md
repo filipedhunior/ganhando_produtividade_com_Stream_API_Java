@@ -142,7 +142,25 @@ Utilizando a Stream API, verifique se todos os números da lista são iguais e e
 
 Com a Stream API, encontre a soma dos números da lista que são divisíveis tanto por 3 quanto por 5 e exiba o resultado no console.
 
+````java
+package stream_api.desafios;
 
+import java.util.List;
+import java.util.Arrays;
+
+public class Desafio19 {
+    public static void main(String[] args) {
+        List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4, 3);
+
+        int somaDivisiveis = numeros.stream()
+                .distinct()
+                .filter(n -> n % 3 ==0 && n % 5==0)
+                .mapToInt(Integer::intValue).sum(); // o resultado foi zero pois nenhum valor que corresponda a condição de filter foi encontrado
+
+        System.out.println("O resultado foi " + somaDivisiveis);
+    }
+}
+````
 ### Instruções:
 - Cada desafio deverá ser implementado em classes separadas neste mesmo pacote.
 - Os desafios podem ser executados individualmente a partir dos métodos main de cada classe.
