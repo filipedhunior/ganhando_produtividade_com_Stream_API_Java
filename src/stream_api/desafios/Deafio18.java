@@ -10,7 +10,7 @@ public class Deafio18 {
 
         Predicate<Integer> iguais = n -> n.equals(n);
 
-        boolean saoIguais = numeros.stream().anyMatch(iguais);
+        boolean saoIguais = numeros.stream().allMatch(n -> n.equals(numeros.get(0))); // a lista esta comparando se todos os elementos são iguais ao elemento do primeiro indice. pode ser melhorada avaliando todos os indices
         System.out.println("Os numeros são iguais? " + saoIguais);
     }
 }
